@@ -9,15 +9,4 @@ Garbage Collection: python automatically performs this by checking to see if any
                     runtime "garbage collector" will see this orphaned element in the list and get rid of it. This
                     only occurs in programming languages with a garbage collection.
 
-
-
-
-
-
-
-
-
-
-
-
 '''

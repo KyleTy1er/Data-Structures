@@ -14,7 +14,9 @@ return elements in First In First Out order.
    with built in Python methods such as append and pop...
    Using the Linked List the storage involves a head and a tail, and the
    functionality of adding and removing is constrained by the head and
-   tail values to keep the order of the Linked List.
+   tail values to keep the order of the Linked List. In an array you can
+   access locations with a single operation through index, whereas with
+   a Linked List you must iterate to find values o(n).
    
 Stretch: What if you could only use instances of your Stack class to implement the Queue?
          What would that look like? How many Stacks would you need? Try it!
