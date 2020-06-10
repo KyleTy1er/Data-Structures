@@ -8,7 +8,7 @@ class ListNode:
 
     """Wrap the given value in a ListNode and insert it
     after this node. Note that this node could already
-    have a next node it is point to."""
+    have a next node it is pointing to."""
     def insert_after(self, value):
         current_next = self.next
         self.next = ListNode(value, self, current_next)
@@ -48,7 +48,22 @@ class DoublyLinkedList:
     as the new head of the list. Don't forget to handle 
     the old head node's previous pointer accordingly."""
     def add_to_head(self, value):
-        pass
+        self.length += 1
+        if not self.head:
+            # this runs if there are no elements in the list
+            # you end up with: A 1 element list
+            # it has both head and tail attributes
+            # the head.next & head.prev properties are None
+            self.head = ListNode(value)
+            self.tail = self.head
+        if self.head:
+            # how do I make the first elements next property
+            # equal the second elements previous property
+            # when they are supposed to equal each other?
+            self.head.next = ListNode(value, self.head.next)
+            next_node = self.head.next
+            self.head = next_node
+
 
     """Removes the List's current head node, making the
     current head's next node the new head of the List.
@@ -86,3 +101,5 @@ class DoublyLinkedList:
     """Returns the highest value currently in the list"""
     def get_max(self):
         pass
+
+
