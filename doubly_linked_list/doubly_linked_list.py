@@ -60,9 +60,10 @@ class DoublyLinkedList:
             # how do I make the first elements next property
             # equal the second elements previous property
             # when they are supposed to equal each other?
-            self.head.next = ListNode(value, self.head.next)
-            next_node = self.head.next
-            self.head = next_node
+            new_node = ListNode(value, None, self.head)
+            self.head.next = new_node
+            self.head = new_node
+            return new_node
 
 
     """Removes the List's current head node, making the
