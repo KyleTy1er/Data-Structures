@@ -21,24 +21,24 @@ sys.path.append('../singly_linked_list')
 from singly_linked_list import LinkedList
 
 
-class Stack:
-    def __init__(self):
-        self.size = 0
-        self.storage = []
-
-    def push(self, value):
-        self.size = len(self.storage)
-        self.storage.append(value)
-
-    def pop(self):
-        if self.size == 0:
-            return None
-        else:
-            return self.storage.pop()
-
-    def len(self):
-        self.size = len(self.storage)
-        return self.size
+# class Stack:
+#     def __init__(self):
+#         self.size = 0
+#         self.storage = []
+#
+#     def push(self, value):
+#         self.size = len(self.storage)
+#         self.storage.append(value)
+#
+#     def pop(self):
+#         if self.size == 0:
+#             return None
+#         else:
+#             return self.storage.pop()
+#
+#     def len(self):
+#         self.size = len(self.storage)
+#         return self.size
 
 
 
