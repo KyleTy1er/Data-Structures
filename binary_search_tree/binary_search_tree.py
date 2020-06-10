@@ -17,20 +17,86 @@ class BSTNode:
 
     # Insert the given value into the tree
     def insert(self, value):
-        pass
+    #1. check if there is no root,
+        # we can check this by seeing if self == None
+        # if there isn't we create the node and park it
+
+    #2. otherwise, there is a root
+        # compare value to the roots value
+        # if less than go left
+        # if greater or equal go right
+
+        if value < self.value:
+            # go left
+            # we have to cvheck if there is another node on the left side
+            # so we dont overwrite
+            if self.left:
+                # self.left is a node..
+                self.left.insert(value)
+            else:
+                self.left = BSTNode(value)
+        else:
+            #go right
+            # we have to cvheck if there is another node on the left side
+            # so we dont overwrite
+            if self.right:
+                # self.right is already a node...
+                self.right.insert(value)
+            else:
+                self.right = BSTNode(value)
+
+
+
 
     # Return True if the tree contains the value
     # False if it does not
     def contains(self, target):
-        pass
+      # Is there a node to check? If not return False...
+        if self.value is None:
+            return False
+        else:
+          # If the root nodes value is your target return True:
+            if self.value == target:
+                return True
+            # if target is less than the parent node then
+            # we check the left value of the child node:
+            if target < self.value:
+              if self.left:
+                # if left child node exists:
+                # if left child node contains target return True:
+                if self.left.contains(target):
+                    return True
+                   # if at the end no variable equals the target we can return false:
+                else: return False
+            # if target is greater than or equal to the parent node:
+            if target >= self.value:
+              # if a child node on the right exists:
+              if self.right:
+                # check if the child node equals the target variable.
+                if self.right.contains(target):
+                    return True
+                    # if at the end no variable equals the target we can return false:
+                else: return False
+
+
 
     # Return the maximum value found in the tree
     def get_max(self):
-        pass
+      if self is None:
+          return "Tree is empty."
+      else:
+          if self.right is None:
+              return self.value
+          else:
+              return self.right.get_max()
 
     # Call the function `fn` on the value of each node
     def for_each(self, fn):
-        pass
+      fn(self.value)
+      if self.left:
+        self.left.for_each(fn)
+      if self.right:
+        self.right.for_each(fn)
 
     # Part 2 -----------------------
 
