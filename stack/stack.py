@@ -41,7 +41,7 @@ from singly_linked_list import LinkedList
 #         return self.size
 
 
-
+#
 class Stack:
     def __init__(self):
         self.size = 0
